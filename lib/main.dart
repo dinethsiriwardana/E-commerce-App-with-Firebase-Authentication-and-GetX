@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/app/modules/products/controllers/auth_controller.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
@@ -7,7 +8,7 @@ void main() async {
   await Firebase.initializeApp();
 
   // Initialize AuthController
-  // Get.put(AuthController());
+  Get.put(AuthController());
 
   runApp(MyApp());
 }

@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/app/modules/products/controllers/auth_controller.dart';
+import 'package:e_commerce_app/app/modules/products/controllers/product_controller.dart';
 import 'package:e_commerce_app/app/routes/routes.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/widgets.dart';
@@ -8,6 +9,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   Get.put(AuthController());
+  Get.put(ProductController());
 
   runApp(MyApp());
 }

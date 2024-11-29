@@ -21,12 +21,12 @@ class Product {
 
   factory Product.fromJson(Map<String, dynamic> json) {
     return Product(
-      id: json['id'],
-      title: json['title'],
-      description: json['description'],
-      price: json['price'],
-      rating: json['rating'],
-      brand: json['brand'],
+      id: json['id'] ?? 0,
+      title: json['title'] ?? 'Unknown',
+      description: json['description'] ?? 'Unknown',
+      price: json['price'] ?? 0,
+      rating: json['rating'] ?? 0,
+      brand: json['brand'] ?? 'Unknown',
       images: List<String>.from(json['images'] ?? []),
       thumbnail: json['thumbnail'] ?? 'https://via.placeholder.com/150',
     );

@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:e_commerce_app/app/modules/products/controllers/auth_controller.dart';
 import 'package:e_commerce_app/app/modules/products/controllers/product_controller.dart';
 import 'package:e_commerce_app/app/modules/products/views/product_details.dart';
 import 'package:flutter/material.dart';
@@ -6,10 +7,20 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 class HomePage extends GetView<ProductController> {
+  final AuthController authController = Get.find<AuthController>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Products')),
+      appBar: AppBar(
+        title: Text('Products'),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.logout),
+            onPressed: () => authController.signOut(),
+          ),
+        ],
+      ),
       body: Obx(() {
         if (controller.isLoading.value) {
           return Center(child: CircularProgressIndicator());

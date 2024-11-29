@@ -33,7 +33,7 @@ class HomePage extends GetView<ProductController> {
         return GridView.builder(
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            childAspectRatio: 0.7,
+            childAspectRatio: 0.6,
           ),
           itemCount: controller.products.length,
           itemBuilder: (context, index) {

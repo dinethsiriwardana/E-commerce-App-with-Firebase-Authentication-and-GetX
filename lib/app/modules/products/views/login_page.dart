@@ -10,32 +10,44 @@ class LoginPage extends GetView<AuthController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Login')),
+      appBar: AppBar(title: const Text('Login')),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Spacer(),
             TextField(
               controller: _emailController,
-              decoration: InputDecoration(labelText: 'Email'),
+              decoration: const InputDecoration(labelText: 'Email'),
             ),
+            const SizedBox(height: 20),
             TextField(
               controller: _passwordController,
-              decoration: InputDecoration(labelText: 'Password'),
+              decoration: const InputDecoration(labelText: 'Password'),
               obscureText: true,
             ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () => controller.signIn(
-                  _emailController.text, _passwordController.text),
-              child: Text('Login'),
+            const SizedBox(height: 50),
+            SizedBox(
+              width: 300,
+              height: 50,
+              child: ElevatedButton(
+                onPressed: () => controller.signIn(
+                    _emailController.text, _passwordController.text),
+                child: const Text('Login'),
+              ),
             ),
-            ElevatedButton(
-              onPressed: () => controller.signUp(
-                  _emailController.text, _passwordController.text),
-              child: Text('Sign Up'),
+            const SizedBox(height: 20),
+            SizedBox(
+              height: 50,
+              width: 300,
+              child: ElevatedButton(
+                onPressed: () => controller.signUp(
+                    _emailController.text, _passwordController.text),
+                child: const Text('Sign Up'),
+              ),
             ),
+            const SizedBox(height: 20),
           ],
         ),
       ),

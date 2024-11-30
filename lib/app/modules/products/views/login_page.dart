@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:e_commerce_app/app/modules/products/controllers/auth_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -16,7 +17,20 @@ class LoginPage extends GetView<AuthController> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Spacer(),
+            SizedBox(
+              height: 200,
+              width: 200,
+              child: CachedNetworkImage(
+                imageUrl:
+                    'https://icons-for-free.com/iff/png/512/commerce+ecommerce+means+shopping+store+icon-1320184205943687526.png',
+                placeholder: (context, url) =>
+                    Center(child: CircularProgressIndicator()),
+                errorWidget: (context, url, error) => Icon(Icons.error),
+                fit: BoxFit.cover,
+                width: double.infinity,
+              ),
+            ),
+            const SizedBox(height: 50),
             TextField(
               controller: _emailController,
               decoration: const InputDecoration(labelText: 'Email'),
